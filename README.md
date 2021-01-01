@@ -1,0 +1,1 @@
+This is a fully functioning Rock, Paper, Scissors game that will work 100% in the console log. Updates in the future will add a user interface!

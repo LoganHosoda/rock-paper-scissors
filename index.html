@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Computer randomly selects rock, paper, or scissors, returns result, outputs selection. 
+
+        function computerPlay(rock, paper, scissors) {
+            let rng = Math.floor((Math.random() * 3) + 1);
+            let choice = "";
+            if (rng === 1) {
+                choice = "Rock";
+                console.log("The enemy has chosen: " + choice + "!");
+                return choice;
+            } else if (rng === 2) {
+                choice = "Paper";
+                console.log("The enemy has chosen: " + choice + "!");
+                return choice;
+            } else {
+                choice = "Scissors";
+                console.log("The enemy has chosen: " + choice + "!");
+                return choice;
+            }
+        }
+
+        // Player can select from rock, paper, or scissors, returns results, outputs selection.
+
+        function playerChoice(rock, paper, scissors) {
+            let choice = prompt("Rock, Paper, or Scissors: ", "Rock");
+            console.log("You have chosen: " + choice + "!");
+            return choice.toUpperCase();
+        }
+
+        // Single round of rock, paper, scissors! Compares results of functions above, and outputs the winner.
+
+        function rockPaperScissors(playerSelection, computerSelection) {
+            playerSelection = playerChoice();
+            computerSelection = computerPlay();
+            let playerWin = 0;
+            let computerWin = 0;
+            let draw = 0;
+
+            if (playerSelection === "ROCK" && computerSelection === "Scissors") {
+                console.log("You won, Rock beats Paper!");
+                return 1;
+            } else if (playerSelection === "ROCK" && computerSelection === "Rock") {
+                console.log("It's a draw, Rock doesn't beat rock! Try again!");
+                return 3;
+            } else if (playerSelection === "ROCK" && computerSelection === "Paper") {
+                console.log("You lost bot! Paper beats rock n00b!");
+                return 2;
+            } else if (playerSelection === "PAPER" && computerSelection === "Rock") {
+                console.log("You won! Paper beats rock!");
+                return 1;
+            } else if (playerSelection === "PAPER" && computerSelection === "Paper") {
+                console.log("It's a draw! Paper doesn't beat paper, try again!");
+                return 3;
+            } else if (playerSelection === "PAPER" && computerSelection === "Scissors") {
+                console.log("You lost bot! Scissors beats paper you n00b!!");
+                return 2;
+            } else if (playerSelection === "SCISSORS" && computerSelection === "Rock") {
+                console.log("You lost bot! Scissors doesn't beat rock n00b, try again!");
+                return 2;
+            } else if (playerSelection === "SCISSORS" && computerSelection === "Paper") {
+                console.log("You won! Scissors beats paper!");
+                return 1;
+            } else if (playerSelection === "SCISSORS" && computerSelection === "Scissors") {
+                console.log("It's a draw! Scissors doesn't beat scissors, try again!");
+                return 3;
+            } else {
+                console.log("Hmm, that didn't seem to work out. Try again!")
+            }
+        }
+
+        // The final game loop! This counts how many wins there are, and decides the winner overall.
+
+        function game() {
+            let wins = 0;
+            let losses = 0;
+            let draws = 0;
+
+            while (wins < 5 && losses < 5) {
+
+                let results = rockPaperScissors();
+
+                if (results === 1) {
+                    wins++;
+                    console.log("Current score: " + wins + " wins, " + losses + " losses, " + draws + " draws!");
+                    if (wins === 5) {
+                        console.log("YOU WON THE GAME!!!!");
+                        alert("YOU WON THE GAME!!!!");
+                    } else if (wins === 4) {
+                        console.log("Almost there! You're just one win away from winning the game!");
+                    }
+                    continue;
+                } else if (results === 2) {
+                    losses++;
+                    console.log("Current score: " + wins + " wins, " + losses + " losses, " + draws + " draws!");
+                    if (losses === 5) {
+                        console.log("YOU LOST THE GAME YOU BOT, HAHAHAHAHA");
+                        alert("YOU LOST THE GAME YOU B0T, HAHAHAHAHA");
+                    } else if (losses === 4) {
+                        console.log("Oh no!! You're one loss away from being a complete bot!");
+                    }
+                    continue;
+                } else if (results === 3) {
+                    draws++;
+                    console.log("Current score: " + wins + " wins, " + losses + " losses, " + draws + " draws!");
+                    continue;
+                } else {
+                    console.log("Uhhhhmmm, that didn't seem to work. Please try again!")
+                    continue;
+                    }
+                }  
+            }   
+
+        game();
+    </script>
+</body>
+</html>
