@@ -6,8 +6,28 @@
     <title>Document</title>
 </head>
 <body>
+    <style>
+        p {
+            font-size: 30px;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+    </style>
+    <h1>INSTRUCTIONS!!!</h1>
+
+    <div>
+        <p>Step 1: Press ctrl + shift + j to open the console. Or, right click, hit inspect, and click on "Console".</p>
+        <p>Step 2: Enter "game()" in the console.</p>
+        <p>Step 3: Follow the prompts and play the game!</p>
+    </div>
     
     <script>
+        // Alert giving instructions to play.
+
+            alert("Follow the instructions in order to play!");
+
         // Computer randomly selects rock, paper, or scissors, returns result, outputs selection. 
 
         function computerPlay(rock, paper, scissors) {
@@ -93,7 +113,7 @@
                     console.log("Current score: " + wins + " wins, " + losses + " losses, " + draws + " draws!");
                     if (wins === 5) {
                         console.log("YOU WON THE GAME!!!!");
-                        alert("YOU WON THE GAME!!!!");
+                        alert("YOU WON THE GAME!!!! Type 'game()' in the console to try again!");
                     } else if (wins === 4) {
                         console.log("Almost there! You're just one win away from winning the game!");
                     }
@@ -103,7 +123,7 @@
                     console.log("Current score: " + wins + " wins, " + losses + " losses, " + draws + " draws!");
                     if (losses === 5) {
                         console.log("YOU LOST THE GAME YOU BOT, HAHAHAHAHA");
-                        alert("YOU LOST THE GAME YOU B0T, HAHAHAHAHA");
+                        alert("YOU LOST THE GAME YOU B0T, HAHAHAHAHA!! Type 'game()' in the console to try again!");
                     } else if (losses === 4) {
                         console.log("Oh no!! You're one loss away from being a complete bot!");
                     }
@@ -118,8 +138,6 @@
                     }
                 }  
             }   
-
-        game();
     </script>
 </body>
 </html>
