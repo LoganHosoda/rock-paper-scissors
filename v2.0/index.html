@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body>
+    <h1>
+        <span class="title">CHOOSE YOUR WEAPON</span>
+    </h1>
+    <h3>
+        <span class="scoreboard">SCORES</span>
+    </h3>
+    <div class="scores">
+        <div class="score">
+            <span>HUMAN</span>
+            <span id ="human" class="track">0</span>
+        </div>
+        <div class="score">
+            <span>DRAW</span>
+            <span id="draw" class="track">0</span>
+        </div>
+        <div class="score">
+            <span>COMPUTER</span>
+            <span id="computer" class="track">0</span>
+        </div>
+    </div>
+    <div class="choices">
+        <button id="rock" class="choice">Rock</button>
+        <button id="paper" class="choice">Paper</button>
+        <button id="scissors" class="choice">Scissors</button>
+    </div>
+    <div class="textbox">
+        <p class="text"></p>
+    </div>
+    <div id="reload">
+        <button id="refresh" onClick="window.location.reload();">TRY AGAIN</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
